@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin: auto;
+            width:100px;
+            height:70px;
+            position: relative;
+            left:400px;
+            top:100px;
+        }
+        h1{
+            position: relative;
+             left:400px;
+        }
+        #show{
+            position: relative;
+           left:500px;
+           top:50px;
+           font-size: xx-large;
+         
+        }
+    </style>
+</head>
+<body>
+    <div><h1> MASAI STOPWATCH</h1></div>
+    <div id="show">00:00:00</div>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+  
+
+  
+</body>
+</html>
+<script>
+ 
+    let minutes=0
+    let seconds=0
+    let Millisec=0
+   function start(){
+    timer = setInterval(()=>{
+        stopwatch()
+        // seconds++
+        // document.getElementById("show").textContent=`${seconds}`
+    },10)
+  
+}
+
+function stop(){
+    clearInterval(timer)
+}
+function reset(){
+clearInterval(timer)
+    document.getElementById("show").textContent=`00:00:00`
+}
+
+function stopwatch(){
+       
+     seconds= Math.floor(Millisec/100)
+
+let  minutes=Math.floor(seconds/60)  
+
+let remainingSec=Math.floor(seconds%60)
+  let remainingMilliSec=Math.floor(Millisec%100)
+  Millisec++
+
+ 
+ 
+ 
+ 
+  console.log(Millisec,seconds)
+  document.getElementById("show").textContent=`${minutes}m:${remainingSec}s: ${remainingMilliSec}`
+  }
+
+
+</script>
